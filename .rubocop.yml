@@ -1,2 +1,4 @@
-Documentation:
+AllCops:
+  NewCops: enable
+Style/Documentation:
   Enabled: false
