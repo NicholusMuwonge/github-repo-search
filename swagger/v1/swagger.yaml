@@ -1,0 +1,61 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/github_repo_search":
+    get:
+      summary: Makes a search call to github api and returns search results.
+      tags:
+      - RepositorySearch
+      parameters:
+      - name: q
+        in: query
+        required: true
+        pattern: "^[a-zA-Z0-9].*"
+        minLength: 1
+        schema:
+          type: string
+      - name: per_page
+        in: query
+        default: 10
+        required: false
+        schema:
+          type: integer
+      - name: page
+        in: query
+        default: 1
+        required: false
+        schema:
+          type: integer
+      - name: sort
+        in: query
+        enum:
+        - stars
+        - forks
+        - help-wanted-issues
+        - updated
+        description: 'Sort order: Options(stars, forks, help-wanted-issues, updated)'
+        required: false
+        schema:
+          type: string
+      - name: order
+        in: query
+        enum:
+        - asc
+        - desc
+        description: 'Sort direction: Options(asc, desc)'
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: search results returned
+        '400':
+          description: bad request
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000/

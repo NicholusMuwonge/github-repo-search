@@ -2,8 +2,9 @@
 
 module GithubServices
   class RepositorySearch
-    def initialize(query_params)
+    def initialize(query_params, connection = Faraday.new)
       @query_params = query_params
+      @connection = connection
     end
 
     def call

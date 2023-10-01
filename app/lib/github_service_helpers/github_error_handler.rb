@@ -7,7 +7,7 @@ module GithubServiceHelpers
     end
 
     def handle
-      Struct.new(success?: false, response_code: nil, response_body: @error.message)
+      OpenStruct.new(success?: false, response_code: nil, response_body: @error.message)
     end
   end
 end

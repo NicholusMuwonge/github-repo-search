@@ -10,9 +10,9 @@ module GithubServiceHelpers
       status = @response.status
       body = @response.body
       if status == 200
-        Struct.new(success?: true, response_code: status, response_body: JSON.parse(body))
+        OpenStruct.new(success?: true, response_code: status, response_body: JSON.parse(body))
       else
-        Struct.new(success?: false, response_code: status, response_body: body)
+        OpenStruct.new(success?: false, response_code: status, response_body: body)
       end
     end
   end

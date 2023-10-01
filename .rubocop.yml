@@ -2,3 +2,7 @@ AllCops:
   NewCops: enable
 Style/Documentation:
   Enabled: false
+Style/OpenStructUse:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
