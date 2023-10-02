@@ -33,17 +33,17 @@ describe 'Github API calls' do
           data = JSON.parse(response.body)
 
           expect(data['result']).to eq('error')
-          # expect(data['errors']['q']).to eq(['should start with an alphanumeric character',
-          #                                    'should have at least one character'])
-          # expect(data['errors']['order']).to eq([
-          #                                         'must be one of: asc, desc'
-          #                                       ])
-          # expect(data['errors']['per_page']).to eq([
-          #                                            'must be one of: 5 - 20'
-          #                                          ])
-          # expect(data['errors']['sort']).to eq([
-          #                                        'must be one of: stars, forks, help-wanted-issues, updated'
-          #                                      ])
+          expect(data['errors']['q']).to eq(['should start with an alphanumeric character',
+                                             'should have at least one character'])
+          expect(data['errors']['order']).to eq([
+                                                  'must be one of: asc, desc'
+                                                ])
+          expect(data['errors']['per_page']).to eq([
+                                                     'must be one of: 5 - 20'
+                                                   ])
+          expect(data['errors']['sort']).to eq([
+                                                 'must be one of: stars, forks, help-wanted-issues, updated'
+                                               ])
         end
       end
     end
