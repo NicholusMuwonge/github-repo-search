@@ -9,10 +9,10 @@ The project is built in `Ruby On Rails` and a `Reactjs` client.
 ### Considerations:
 
 - Architecture: Monolith.
-- Caching: No caching added because of time contraints but as the app grows to support lots of users and if this is a majorly used fearure, we may consider caching previously fetched requests.
-- This runs on the main thread because its data in demand and its not great UX to defer it, should the load of requests grow, its own service would make sense.
-- UI is build in React and React Query. Requery has excellent server data caching strategies to limit calls to the server
-- Security: For this demo, I only took care of origins from which we expect the API to be called, other headers can be added to make this better.
+- Caching: No caching was added because of time constraints but as the app grows to support lots of users and if this is a majorly used feature, we may consider caching previously fetched requests.
+- This runs on the main thread because it's data in demand and it's not great UX to defer it, should the load of requests grow, its own service would make sense.
+- UI is built in React and React Query. Requery has excellent server data caching strategies to limit calls to the server
+- Security: For this demo, I only took care of the origins from which we expect the API to be called, other headers can be added to make this better.
 - Database: None was needed in this scenario.
 - Tests: Rspec
 
@@ -45,7 +45,7 @@ Install dependencies
   bundle install
 ```
 
-Add Project Master.key To be able to Access the crentials, I use Rails credentials. I will share this on request.
+Add Project `Master.key` To be able to access the credentials, I use Rails credentials. I will share this whenever you'd like.
 
 ```bash
   bundle install
@@ -64,7 +64,7 @@ Navigate to the Frontend folder in the project
  cd frontend/github-repo-search
 ```
 
-Install dependencies with your fav package manager, I used `bun` for this and build tool `Vite`
+Install dependencies with your favorite package manager, I used `bun` for this and build tool `Vite`
 
 ```bash
   bun install / yarn / npm i
@@ -95,7 +95,8 @@ I didn't get plenty of time to write those for the frontend as well
 
 ## Screenshots
 
-![App Screenshot](https://ibb.co/ry7RVyg)
+<img width="1508" alt="Screenshot 2023-10-01 at 21 21 26" src="https://github.com/NicholusMuwonge/github-repo-search/assets/43015966/c52f3166-4e83-4bfe-889f-3fe2465f2ebb">
+<img width="1510" alt="Screenshot 2023-10-02 at 10 47 45" src="https://github.com/NicholusMuwonge/github-repo-search/assets/43015966/81a7aa0a-af57-4849-b127-bb1118bbbb3a">
 
 
 ## Documentation
